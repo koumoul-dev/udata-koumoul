@@ -27,3 +27,10 @@ docker-compose up
 
 Then go to <http://localhost:7000> to connect to the development server
 with live reload.
+
+## Publish
+
+```
+python setup.py sdist bdist_wheel
+twine upload dist/*
+```
