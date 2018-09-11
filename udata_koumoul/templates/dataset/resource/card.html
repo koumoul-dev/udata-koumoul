@@ -13,7 +13,7 @@
 
     <div class="card-body">
         <h4 class="ellipsis">{{ resource.title or _('Nameless resource') }}</h4>
-        {% if resource.preview_url %}
+        {% if resource.type == 'main' and resource.preview_url %}
         <iframe width="100%" height="500" frameborder="0" src="{{ resource.preview_url }}"></iframe>
         {% else %}
         <div class="resource-card-description">{{ resource.description|mdstrip(180) }}</div>
@@ -50,8 +50,16 @@
         </div>
         <div class="resource-card-actions btn-toolbar">
             <div class="btn-group">
-                {% if resource.url %}
-                <a @click.stop href="{{ resource.url }}" class="btn btn-sm btn-primary">Accéder</a>
+                {% if resource.type != 'main' and resource.preview_url %}
+                <a class="btn btn-sm btn-primary"
+                    {% if config.PREVIEW_MODE == 'iframe' %}
+                    @click.stop="showPreview('{{ resource.preview_url }}')"
+                    {% else %}
+                    @click.stop href="{{ resource.preview_url }}" target="_blank"
+                    {% endif %}
+                    >
+                    Visualiser
+                </a>
                 {% endif %}
                 {% if not resource.preview_url %}
                 <a @click.stop href="{{ resource.latest }}" class="btn btn-sm btn-primary" download>{{ _('Download') }}</a>

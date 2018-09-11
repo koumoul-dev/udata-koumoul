@@ -52,7 +52,7 @@
           <div class="col-xs-4">
               <h3 class="section-title">Dernières réutilisations</h3>
               {% for reuse in recent_reuses[:nb] %}
-              <div class="col-xs-12">
+              <div>
               {% include theme('reuse/card.html') %}
               </div>
               {% endfor %}

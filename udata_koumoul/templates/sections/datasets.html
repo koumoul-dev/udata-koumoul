@@ -83,7 +83,7 @@
             <div class="col-xs-4">
                 <h3 class="section-title">Dernières contributions</h3>
                 {% for dataset in recent_datasets[:nb] %}
-                <div class="col-xs-12">
+                <div>
                 {% include theme('dataset/card.html') %}
                 </div>
                 {% endfor %}
