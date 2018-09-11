@@ -14,7 +14,6 @@
                             src="{{ reuse.organization.logo(70, external=True)|placeholder('organization', external=True) }}"
                             width="70" height="70">
                     </div>
-                    {{ badge_if_certified(reuse.organization) }}
                 {% else %}
                 <div class="card-logo">
                     <img src="{{ ''|placeholder('organization', external=True) }}" alt="">
