@@ -1,4 +1,5 @@
 {% macro datasets_section(nb=5) %}
+{% from theme('macros/certified.html') import badge_if_certified with context %}
 {% if recent_datasets %}
 <section  class="home-section">
     <div class="container">
