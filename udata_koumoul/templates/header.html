@@ -5,7 +5,7 @@
 <section class="header">
     <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url_for('site.home') }}">
+          <a class="navbar-brand" href="https://koumoul.com">
               <div class="logo-container">
                 <img src="{{ theme_static('img/koumoul-transparent-256.png') }}" alt="{{ g.site.title }}" />
               </div>
@@ -69,32 +69,17 @@
                     </a>
                 </li>
                 {% endif %}
-                {% if g.lang_code and request.url %}
-                <li class="dropdown language">
-                    <a role="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
-                        <span class="fa fa-fw fa-globe"></span>
-                        {{ _('Language') }}
-                        <span class="fa fa-angle-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        {% for code, name in config['LANGUAGES'].items() %}
-                        <li>
-                            <a href="{{ request.url.replace('/{0}/'.format(g.lang_code),'/{0}/'.format(code)) }}">
-                                {{name}}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endif %}
-
             </ul>
         </nav>
     </div>
 </section>
 <section class="subheader">
     <div class="container">
-        <nav class="navbar-collapse collapse">
+        <div class="row">
+          <div class="col-md-3 col-sm-5 col-xs-6">
+            {{ site_search(class='navbar-form') }}
+          </div>
+          <div class="col-md-9 col-sm-7 col-sm-offset-0 col-xs-offset-1 col-xs-5">
             <ul class="nav navbar-nav">
                 {% for item in current_theme.menu %}
                 <li {% if item.items %}class="dropdown dropdown-hover"{% endif %}>
@@ -109,12 +94,8 @@
                 </li>
                 {% endfor %}
             </ul>
-            <ul class="nav navbar-nav navbar-right navbar-middle">
-                <li>
-                    {{ site_search(class='navbar-form') }}
-                </li>
-            </ul>
-        </nav>
+          </div>
+        </div>
     </div>
 </section>
 {% endcache %}

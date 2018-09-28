@@ -85,7 +85,7 @@ long_description = '\n'.join((
 
 setup(
     name='udata-koumoul',
-    version='0.3.1',
+    version='0.4.0',
     description='Theme for Koumoul demo opendata portal',
     long_description=long_description,
     url='https://demo.koumoul.com',

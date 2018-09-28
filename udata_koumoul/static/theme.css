@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  height: 56px;
+  height: 64px;
   background-color: #1E88E5;
 }
 
@@ -25,8 +25,6 @@ body {
   background-color: white;
   border-radius: 54px;
   margin-top: -4px;
-  margin-left: -120px;
-  margin-right: 40px;
   border: 6px solid #1E88E5;
 }
 
@@ -39,17 +37,13 @@ body {
 .navbar-brand > .navbar-slogan {
     float: right;
     color: white;
-    margin-top: 16px;
+    /*margin-left: -16px;*/
+    margin-top: -24px;
+    margin-left: 16px;
 }
 
 .navbar-brand > .navbar-slogan > h2 {
-    margin-top: -10px;
-    margin-bottom: 0;
-    float: left;
-}
-
-.navbar-brand > .navbar-slogan > small {
-    margin-left: 16px;
+  margin-bottom: 0px
 }
 
 .header nav > ul > li > a{
@@ -68,10 +62,6 @@ body {
 .subheader nav > ul > li > a,
 body a.top-button{
     color: #616161;
-}
-
-.site-search {
-  margin-top: -25px;
 }
 
 .section-title{
@@ -93,12 +83,31 @@ body a.top-button{
   padding-left: 10px;
 }
 
-.banner .container{
-  padding: 64px 96px;
+@media (min-width: 992px) {
+  .banner .container{
+    padding: 64px 96px;
+  }
 }
 
 .jumbotron {
   background-color: rgba(255, 255, 255, .9);
   border-radius: 16px;
-  padding: 16px 32px;
+  padding: 12px 16px;
+}
+
+.jumbotron h2, .jumbotron h4, .jumbotron p {
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+   .banner .container {
+      width: 100%;
+      padding: 96px 16px;
+   }
+}
+
+@media (max-width: 750px) {
+   .subheader ul {
+      margin-top: -24px;
+   }
 }
