@@ -4,7 +4,7 @@ udata-koumoul
 
 Theme for Koumoul's demo opendata portal
 '''
-from __future__ import unicode_literals
+
 
 from udata.app import nav
 from udata.i18n import lazy_gettext as _
