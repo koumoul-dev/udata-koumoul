@@ -88,6 +88,7 @@ setup(
     version='0.5.0',
     description='Theme for Koumoul demo opendata portal',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://demo.koumoul.com',
     author='Koumoul',
     author_email='contact@koumoul.com',
